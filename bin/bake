@@ -1,0 +1,12 @@
+THIS_SCRIPT=$_
+
+if [[ -L $THIS_SCRIPT ]]
+then
+	THIS_SCRIPT=`ls -l $THIS_SCRIPT | awk '{print $NF}'`
+fi
+
+BAKE_HOME=`dirname $THIS_SCRIPT`
+
+CLASSPATH=$BAKE_HOME/bake.jar:$BAKE_HOME/../lib/ant.jar
+
+java -cp $CLASSPATH bake.Bake $BAKE_HOME $*
