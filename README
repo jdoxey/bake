@@ -1,7 +1,7 @@
  Bake
  ====
 
-Bake is a Java build tool that doesn't use XML.  Builds are described using the JDK's built in JavaScript engine (at the moment JDK 6 or higher is required).
+Bake is a Java based build tool that doesn't use XML.  Builds are described using the JDK's built in JavaScript engine (at the moment JDK 6 or higher is required).  Bake build scripts have access to all Ant tasks and all Java classes in the JDK.
 
 This project has basic functionality working, but is still in proof of concept phase.  There are no tests around the code.  Windows environment is unsupported as yet.
 
@@ -62,7 +62,7 @@ project = {
  Built-ins
  ---------
 The following utilities are available within your build script,
-- Any classes loaded by the JVM. For example you can create a Java File object with 'var file = new java.io.File(".");'.  For more info on this stuff, have a look at the "Java Scripting Programmer's Guide" on the Java site (at the time of writing, at http://java.sun.com/javase/6/docs/technotes/guides/scripting/programmer_guide/index.html)
+- Any classes loaded by the JVM. For example you can create a Java File object with 'var file = new java.io.File(".");'.  For more info on this stuff, have a look at the "Java Scripting Programmer's Guide" on the Java site (at the time of writing, at http://java.sun.com/javase/6/docs/technotes/guides/scripting/programmer_guide/index.html) and Mozilla's Rhino documentation (https://developer.mozilla.org/en/Rhino_documentation).
 - Some nice utility functions which are included by 'jrunscript' including some very handy file system level commands like 'mkdirs()' and 'mv()'. These are also documented on the Java web site (at the time of writing, at http://java.sun.com/javase/7/docs/technotes/tools/share/jsdocs/index.html).
 - All Ant classes. The common packages are included in a variable called 'ant_imports'. These are 'org.apache.tools.ant', 'org.apache.tools.ant.types' and 'org.apache.tools.ant.taskdefs'. When using Ant tasks, take a look at the task descriptions in the Ant manual (http://ant.apache.org/manual/index.html) and what Java types are expected in the API (http://www.jajakarta.org/ant/ant-1.6.1/docs/en/manual/api/index.html).
 - Some helpers included with bake
