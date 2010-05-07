@@ -8,8 +8,12 @@ load(bake_home + "/js/bake-helpers.js");
 try {
 	load("build.js");
 }
-catch (err) {
-	println("** bake: couldn't find 'build.js' in the current directory");
+catch (e if e.javaException instanceof javax.script.ScriptException) {
+    println("** bake: There was an error parsing your build file: " + e);
+    exit(1);
+}
+catch (e) {
+	println("** bake: Couldn't load 'build.js' in the current directory");
 	// TODO: "...do you want me to create one?"
 	exit(1);
 }

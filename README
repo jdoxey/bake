@@ -48,6 +48,7 @@ project = {
  ---------------
 - Download and unzip bake.zip where you want it installed
 - Either add the directory of the 'bake' script (which is in the 'bin' directory of the bake project) to your path, or make a symlink to the 'bake' script in a location already on your path
+- You may also have to make the 'bake' script executable (eg. 'cd $BAKE_HOME/bin && chmod +x bake')
 - Create a 'build.js' file in the root of your fancy new project
 - Create a 'project' variable inside the build.js file which is an object
 - Each attribute of the 'project' object will be taken as a build target
